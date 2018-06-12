@@ -1,0 +1,89 @@
+/*
+ *  This file is part of GM-SIS by #Team10
+ *  No licence because QM owns our souls anyway
+ */
+
+.bg-pane {
+    -fx-min-width: 360px;
+    -fx-pref-width: 960px;
+    -fx-max-width: 100000000000px;
+
+    -fx-background-color: #aaddaa;
+}
+
+.container {
+    -fx-min-width: 360px;
+    -fx-pref-width: 100%;
+    -fx-max-width: 960px;
+    -fx-padding: 16px;
+}
+
+.btn-group > JFXButton {
+    -fx-min-height: 32px;
+    -fx-max-height: 32px;
+    -fx-pref-height: 32px;
+    -fx-font-size: 15px;
+}
+
+.has-error {
+    -fx-text-fill: #b71c1c;
+    -fx-focus-color: #f44336;
+    -fx-unfocus-color: #b71c1c;
+}
+.fullscreen {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}
+
+.btn {
+    -fx-text-fill: #304ffe;
+    -fx-rippler-fill: #c5cae9;
+    -jfx-rippler-fill: #c5cae9;
+}
+
+.btn-raised {
+    -fx-background-color: #3f51b5;
+    -fx-text-fill: #ffffff;
+    -fx-rippler-fill: #536dfe;
+    -jfx-rippler-fill: #536dfe;
+}
+
+.btn-danger {
+    -fx-text-fill: #d50000;
+    -fx-rippler-fill: #ffcdd2;
+    -jfx-rippler-fill: #ffcdd2;
+}
+
+.checkbox {
+    -jfx-checked-color: #3f51b5;
+}
+
+.datepicker {
+    -fx-default-color: #3f51b5;
+    -jfx-default-color: #3f51b5;
+}
+
+.radiobtn {
+    -jfx-selected-color: #3f51b5
+}
+
+.login-toolbar {
+    -fx-background-color: #3f51b5;
+}
+.login-toolbar Label {
+    -fx-text-fill: #ffffff;
+}
+.login-toolbar .btn-danger {
+    -fx-background-color: #ffebee;
+}
+
+.tabs .tab-header-background {
+    -fx-background-color: #3f51b5;
+}
+.tabs .tab-selected-line {
+    -fx-stroke: #ffc400;
+}
+.tabs .tab-container .jfx-rippler {
+    -fx-rippler-fill: #ffc400;
+    -jfx-rippler-fill: #ffc400;
+}

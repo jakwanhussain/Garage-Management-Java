@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">org.sqlite.JDBC</property>
+    <property name="connection.url">jdbc:sqlite:database.db</property>
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">10</property>
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+    <!-- Echo all executed SQL to stdout -->
+      <property name="show_sql">false</property>
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+    <property name="current_session_context_class">thread</property>
+    <property name="hibernate.enable_lazy_load_no_trans">true</property>
+    <!-- Names the annotated entity class -->
+    <mapping class="gmsis.models.authentication.User"/>
+    <mapping class="gmsis.models.specialistRepairs.SpecialistRepair"/>
+    <mapping class="gmsis.models.specialistRepairs.SpecialistRepairCentre"/>
+    <mapping class="gmsis.models.customers.Bill"/>
+    <mapping class="gmsis.models.customers.Customer"/>
+    <mapping class="gmsis.models.bookings.Booking"/>
+    <mapping class="gmsis.models.bookings.Mechanic"/>
+    <mapping class="gmsis.models.parts.PartsModel"/>
+    <mapping class="gmsis.models.parts.PartsItem"/>
+    <mapping class="gmsis.models.vehicles.Vehicle"/>
+    <mapping class="gmsis.models.vehicles.WarrantyCompany"/>
+
+  </session-factory>
+</hibernate-configuration>

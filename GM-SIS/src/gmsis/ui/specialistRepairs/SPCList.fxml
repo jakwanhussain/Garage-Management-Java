@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" fx:id="spcListRoot" prefHeight="554.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.specialistRepairs.SPCListController">
+   <children>
+      <Label layoutX="181.0" layoutY="8.0" text="Specialist Repair Centres (SPC's)">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="spcTable" layoutX="33.0" layoutY="79.0" prefHeight="360.0" prefWidth="685.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="92.0" text="SPC ID" />
+          <TableColumn fx:id="nameCol" prefWidth="135.5" text="SPC Name" />
+            <TableColumn fx:id="addressCol" prefWidth="139.0" text="SPC Address" />
+            <TableColumn fx:id="emailCol" prefWidth="189.0" text="SPC Email" />
+            <TableColumn fx:id="phoneCol" minWidth="3.5" prefWidth="128.5" text="SPC Phone Number" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="editButton" layoutX="569.0" layoutY="510.0" onAction="#editSelectedSPC" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4059a9;" text="Edit" textFill="WHITE" />
+      <JFXButton fx:id="deleteButton" layoutX="649.0" layoutY="510.0" onAction="#deleteSelectedSPC" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4059a9;" text="Delete" textFill="WHITE" />
+      <JFXButton fx:id="addButton" layoutX="489.0" layoutY="510.0" onAction="#addSPC" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4059a9;" text="Add" textFill="WHITE" />
+      <JFXButton layoutX="33.0" layoutY="510.0" onAction="#goBack" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4059a9;" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>

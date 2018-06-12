@@ -1,0 +1,53 @@
+.fullscreen {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}
+
+.btn {
+    -fx-text-fill: #304ffe;
+    -fx-rippler-fill: #c5cae9;
+    -jfx-rippler-fill: #c5cae9;
+}
+
+.btn-raised {
+    -fx-background-color: #3f51b5;
+    -fx-text-fill: #ffffff;
+    -fx-rippler-fill: #536dfe;
+    -jfx-rippler-fill: #536dfe;
+}
+
+.btn-danger {
+    -fx-text-fill: #d50000;
+    -fx-rippler-fill: #ffcdd2;
+    -jfx-rippler-fill: #ffcdd2;
+}
+
+.checkbox {
+    -jfx-checked-color: #3f51b5;
+}
+
+.datepicker {
+    -fx-default-color: #3f51b5;
+    -jfx-default-color: #3f51b5;
+}
+
+.login-toolbar {
+    -fx-background-color: #3f51b5;
+}
+.login-toolbar Label {
+    -fx-text-fill: #ffffff;
+}
+.login-toolbar .btn-danger {
+    -fx-background-color: #ffebee;
+}
+
+.tabs .tab-header-background {
+    -fx-background-color: #3f51b5;
+}
+.tabs .tab-selected-line {
+    -fx-stroke: #ffc400;
+}
+.tabs .tab-container .jfx-rippler {
+    -fx-rippler-fill: #ffc400;
+    -jfx-rippler-fill: #ffc400;
+}

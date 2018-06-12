@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} This file is part of GM-SIS by #Team10
+${licensePrefix} No licence because QM owns our souls anyway
+<#if licenseLast??>
+${licenseLast}
+</#if>

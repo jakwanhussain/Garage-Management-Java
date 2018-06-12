@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of GM-SIS by #Team10
+  ~  No licence because QM owns our souls anyway
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<VBox fx:id="vehicleFormRoot" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" styleClass="fullsize" stylesheets="@vehicles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.vehicle.VehicleFormController">
+   <children>
+       <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+           <items>
+               <AnchorPane>
+                   <children>
+                       <JFXRadioButton fx:id="car" StyleClass="radiobtn" layoutX="14.0" layoutY="16.0" selected="true"
+                                       text="Car">
+                           <toggleGroup>
+                               <ToggleGroup fx:id="vehicle_type"/>
+                           </toggleGroup>
+                       </JFXRadioButton>
+                       <JFXRadioButton fx:id="van" layoutX="126.0" layoutY="16.0" text="Van"
+                                       toggleGroup="$vehicle_type">
+                           <styleClass>
+                               <String fx:value="radiobtn"/>
+                           </styleClass>
+                       </JFXRadioButton>
+                       <JFXRadioButton fx:id="truck" layoutX="252.0" layoutY="16.0" text="Truck"
+                                       toggleGroup="$vehicle_type">
+                           <styleClass>
+                               <String fx:value="radiobtn"/>
+                           </styleClass>
+                       </JFXRadioButton>
+                       <Text layoutX="111.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner:" textAlignment="RIGHT" />
+                       <Text layoutX="26.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Number:" textAlignment="RIGHT" />
+                       <Text layoutX="114.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make:" textAlignment="RIGHT" />
+                       <Text layoutX="112.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:" textAlignment="RIGHT" />
+                       <Text layoutX="79.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Engine Size:" textAlignment="RIGHT" />
+                       <Text layoutX="33.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MoT Renewal Date:" textAlignment="RIGHT" />
+                       <Text layoutX="87.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fuel Type:" textAlignment="RIGHT" />
+                       <Text layoutX="105.3447265625" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Colour:" textAlignment="RIGHT" />
+                       <JFXTextField fx:id="registrationNumber" layoutX="174.0" layoutY="73.0"/>
+                       <JFXTextField fx:id="make" layoutX="174.0" layoutY="105.0"/>
+                       <JFXTextField fx:id="model" layoutX="174.0" layoutY="141.0"/>
+                       <JFXTextField fx:id="engineSize" promptText="Litres in decimal" layoutX="174.0" layoutY="178.0"/>
+                       <JFXButton fx:id="saveVehicle" onAction="#saveEdit" layoutX="275.0" layoutY="343.0"
+                                  mnemonicParsing="false" styleClass="btn-raised" text="Save"/>
+                       <JFXComboBox fx:id="owner" layoutX="180.0" layoutY="40.0" prefHeight="27.0" prefWidth="149.0"
+                                    promptText="Select customer"/>
+                       <JFXCheckBox fx:id="warrantyStatus" checkedColor="#2196f3" layoutX="57.0" layoutY="349.0"
+                                    onAction="#warrantySelected" text="Warranty"/>
+                       <JFXButton fx:id="cancelEdit" onAction="#cancelEdit" layoutX="187.0" layoutY="343.0"
+                                  mnemonicParsing="false"
+                                  text="Cancel">
+                           <styleClass>
+                               <String fx:value="btn-link-danger" />
+                               <String fx:value="requires-selection" />
+                           </styleClass>
+                       </JFXButton>
+                       <JFXTextField fx:id="colour" layoutX="174.0" layoutY="261.0"/>
+                       <JFXTextField fx:id="fuelType" layoutX="174.0" layoutY="221.0"/>
+                       <JFXDatePicker fx:id="motRenewalDate" layoutX="185.0" layoutY="301.0" prefHeight="33.0"
+                                      prefWidth="142.0" styleClass="datepicker"/>
+                   </children>
+               </AnchorPane>
+               <SplitPane orientation="VERTICAL" prefHeight="398.0" prefWidth="390.0">
+                   <items>
+                       <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                               <Text layoutX="18.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warranty Details" textAlignment="RIGHT">
+                                   <font>
+                                       <Font name="System Bold" size="14.0" />
+                                   </font>
+                               </Text>
+                               <Text layoutX="19.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                     text="Company name:" textAlignment="RIGHT"/>
+                               <JFXTextField fx:id="warrantyCompanyName" promptText="New company name" layoutX="12.0"
+                                             layoutY="120.0"
+                                             visible="false"/>
+                               <Text layoutX="19.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                     text="Company address:" textAlignment="RIGHT"/>
+                               <JFXTextField fx:id="warrantyCompanyAddress" promptText="New company address"
+                                             layoutX="12.0" layoutY="180.0"
+                                             visible="false"/>
+                               <Text layoutX="19.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                     text="Warranty start date:" textAlignment="RIGHT"/>
+                               <Text layoutX="19.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                     text="Warranty end date:" textAlignment="RIGHT"/>
+                               <JFXDatePicker fx:id="warrantyStartDate" layoutX="14.0" layoutY="240.0"
+                                              styleClass="datepicker" visible="false"/>
+                               <JFXDatePicker fx:id="warrantyEndDate" layoutX="14.0" layoutY="300.0"
+                                              styleClass="datepicker" visible="false"/>
+                               <JFXComboBox fx:id="warrantyCompanies" layoutX="13.0" layoutY="47.0" prefHeight="27.0"
+                                            prefWidth="214.0" promptText="Select Warranty Company"/>
+                           </children>
+                       </AnchorPane>
+                   </items>
+               </SplitPane>
+           </items>
+       </SplitPane>
+   </children>
+</VBox>

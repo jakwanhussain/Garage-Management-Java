@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of GM-SIS by #Team10
+  ~  No licence because QM owns our souls anyway
+  -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<HBox alignment="CENTER_LEFT" stylesheets="@customers.css" style="-fx-pref-width: 100%;"
+      minWidth="200.0" prefHeight="96.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="gmsis.controllers.customers.CustomerListItemController">
+    <children>
+        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+                <Insets left="12.0" right="12.0"/>
+            </HBox.margin>
+            <image>
+                <Image url="@account.png"/>
+            </image>
+        </ImageView>
+        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <children>
+                <Label fx:id="name" text="Mustafa" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="phone" text="(phone)" textFill="#575757"/>
+                <Label fx:id="vehicles" text="(vehicles)" textFill="#575757"/>
+            </children>
+        </VBox>
+        <Label fx:id="customerType" text="INDIVIDUAL">
+            <styleClass>
+                <String fx:value="label-badge"/>
+            </styleClass>
+            <font>
+                <Font size="16.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="12"/>
+            </HBox.margin>
+        </Label>
+    </children>
+</HBox>

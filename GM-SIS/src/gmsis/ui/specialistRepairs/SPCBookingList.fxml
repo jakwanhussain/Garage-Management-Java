@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="spcBookingListRoot" prefHeight="555.0" prefWidth="789.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.specialistRepairs.SPCBookingListController">
+   <children>
+      <Label layoutX="219.0" layoutY="9.0" text="Specialist Repair Bookings">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Pane layoutX="31.0" layoutY="47.0" prefHeight="68.0" prefWidth="695.0">
+         <children>
+            <JFXButton layoutX="480.0" layoutY="39.0" onAction="#searchBooking" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #4059a9;" text="Search" textFill="WHITE" />
+            <TextField fx:id="searchBookingsText" layoutX="262.0" layoutY="39.0" prefHeight="25.0" prefWidth="209.0" />
+            <ComboBox fx:id="searchBy" layoutX="-1.0" layoutY="39.0" prefHeight="25.0" prefWidth="112.0" promptText="Search By" />
+            <JFXButton layoutX="480.0" layoutY="5.0" onAction="#showParts" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #4059a9;" text="Show Parts" textFill="WHITE" />
+            <JFXButton layoutX="593.0" layoutY="5.0" onAction="#showVehicles" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #4059a9;" text="Show Vehicles" textFill="WHITE" />
+            <JFXButton layoutX="560.0" layoutY="39.0" onAction="#clearSearch" prefHeight="25.0" prefWidth="161.0" style="-fx-background-color: #4059a9;" text="Clear Search/Show All" textFill="WHITE" />
+            <ComboBox fx:id="searchSelectedSPC" layoutX="119.0" layoutY="39.0" prefHeight="25.0" prefWidth="136.0" promptText="at SPC (optional)" />
+         </children>
+      </Pane>
+      <TableView fx:id="spcBookingTable" layoutX="29.0" layoutY="124.0" prefHeight="314.0" prefWidth="730.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="23.5" text="ID" />
+            <TableColumn fx:id="nameCol" prefWidth="108.5" text="Customer Name" />
+            <TableColumn fx:id="phoneCol" prefWidth="103.0" text="Customer &#10;Phone Number" />
+            <TableColumn fx:id="spcCol" minWidth="0.0" prefWidth="88.0" text="SPC" />
+            <TableColumn fx:id="partVehicleCol" minWidth="3.5" prefWidth="150.0" text="Part/Vehicle (P/V)" />
+            <TableColumn fx:id="returnDateCol" minWidth="3.5" prefWidth="104.5" text="  Expected &#10;Return Date" />
+            <TableColumn fx:id="bookingIdCol" minWidth="3.5" prefWidth="72.5" text="   Part of &#10;Booking(ID)" />
+            <TableColumn fx:id="completedCol" minWidth="3.5" prefWidth="79.5" text="Completed" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="deleteButton" layoutX="626.0" layoutY="501.0" onAction="#deleteBooking" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #4059a9;" text="Delete Booking" textFill="WHITE" />
+      <JFXButton fx:id="editButton" layoutX="530.0" layoutY="501.0" onAction="#editBooking" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #4059a9;" text="Edit Booking" textFill="WHITE" />
+     <JFXButton layoutX="425.0" layoutY="501.0" onAction="#makeBooking" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #4059a9;" text="Make Booking" textFill="WHITE" />
+      <JFXButton fx:id="viewSpcButton" layoutX="36.0" layoutY="501.0" onAction="#loadSpcList" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #4059a9;" text="View SPC's" textFill="WHITE" />
+      <JFXButton fx:id="showBillButton" layoutX="626.0" layoutY="463.0" onAction="#showBill" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #4059a9;" text="Show Bill" textFill="WHITE" />
+      <JFXButton fx:id="showOutstandingButton" layoutX="425.0" layoutY="463.0" onAction="#showOutstanding" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: #4059a9;" text="Show Outstanding Repairs" textFill="WHITE" />
+      <JFXButton fx:id="showBookingDetailsButton" layoutX="36.0" layoutY="463.0" onAction="#showBookingDetails" prefHeight="25.0" prefWidth="151.0" style="-fx-background-color: #4059a9;" text="Show Booking Details" textFill="WHITE" />
+      <JFXButton fx:id="setCompletedButton" layoutX="198.0" layoutY="463.0" onAction="#setBookingCompleted" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: #4059a9;" text="Set Completed" textFill="WHITE" />
+      <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="29.0" layoutY="14.0" onMouseClicked="#getHelp">
+         <image>
+            <Image url="@../interrogacao.png" />
+         </image>
+      </ImageView>
+      
+   </children>
+</AnchorPane>

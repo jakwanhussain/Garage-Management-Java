@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of GM-SIS by #Team10
+  ~  No licence because QM owns our souls anyway
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<VBox fx:id="vehicleListRoot" alignment="CENTER" prefHeight="600.0" prefWidth="860.0" stylesheets="@vehicles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.vehicle.VehicleListController">
+
+    <children>
+        <SplitPane prefHeight="380.0" prefWidth="720.0" VBox.vgrow="ALWAYS">
+         <items>
+             <AnchorPane prefHeight="493.0" prefWidth="858.0">
+                 <children>
+                     <TableView fx:id="vehicleTable" layoutX="5.0" layoutY="44.0" prefHeight="380.0" prefWidth="844.0">
+                         <columns>
+                             <TableColumn fx:id="vehicleType" prefWidth="90.06596183776855" text="Type" />
+                             <TableColumn fx:id="owner" prefWidth="143.80955505371094" text="Owner" />
+                             <TableColumn fx:id="registrationNumber" prefWidth="132.87559509277344" text="Registration" />
+                             <TableColumn fx:id="make" prefWidth="115.26397705078125" text="Make" />
+                             <TableColumn fx:id="model" prefWidth="99.619140625" text="Model" />
+                             <TableColumn fx:id="engineSize" prefWidth="94.9415283203125" text="Engine Size" />
+                             <TableColumn fx:id="fuelType" prefWidth="90.4212646484375" text="Fuel Type" />
+                             <TableColumn fx:id="colour" prefWidth="73.57879638671875" text="Colour" />
+                         </columns>
+                     </TableView>
+                     <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="8.0" onAction="#addVehicle" styleClass="btn-raised" text="Add" />
+                     <JFXButton layoutX="66.0" layoutY="8.0" onAction="#editSelectedVehicle" styleClass="requires-selection" text="Edit" />
+                     <JFXButton layoutX="783.0" layoutY="8.0" onAction="#deleteSelectedVehicle" styleClass="requires-selection" text="Delete">
+                         <styleClass>
+                             <String fx:value="btn-danger" />
+                             <String fx:value="requires-selection" />
+                         </styleClass>
+                     </JFXButton>
+                     <AnchorPane layoutX="3.0" layoutY="439.0" prefHeight="42.0" prefWidth="845.0">
+                      <children>
+                          <JFXTextField fx:id="searchInput" layoutX="589.0" layoutY="10.0"/>
+                          <JFXButton layoutX="758.0" layoutY="7.0" onAction="#search" styleClass="btn-group"
+                                     text="Search">
+                           <font>
+                               <Font size="14.0" />
+                           </font>
+                          </JFXButton>
+                          <JFXComboBox fx:id="searchType" layoutX="457.0" layoutY="8.0" promptText="Search by..."/>
+                          <Text layoutX="20.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show:">
+                              <font>
+                                  <Font size="14.0" />
+                              </font>
+                          </Text>
+                          <JFXCheckBox layoutX="78.0" layoutY="14.0" selected="true" styleClass="checkbox" text="Cars">
+                              <font>
+                                  <Font size="14.0" />
+                              </font>
+                          </JFXCheckBox>
+                          <JFXCheckBox layoutX="157.0" layoutY="14.0" selected="true" styleClass="checkbox" text="Vans">
+                              <font>
+                                  <Font size="14.0" />
+                              </font>
+                          </JFXCheckBox>
+                          <JFXCheckBox layoutX="236.0" layoutY="14.0" selected="true" styleClass="checkbox" text="Trucks">
+                              <font>
+                                  <Font size="14.0" />
+                              </font>
+                          </JFXCheckBox>
+                     </children>
+                  </AnchorPane>
+                 </children>
+             </AnchorPane>
+         </items>
+                    </SplitPane>
+        <SplitPane dividerPositions="0.5" prefHeight="101.0" prefWidth="860.0" VBox.vgrow="ALWAYS">
+                        <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="355.0">
+                                <children>
+                                    <Text layoutX="29.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                          text="Service Details">
+                                        <font>
+                                            <Font size="36.0"/>
+                                        </font>
+                                    </Text>
+                                    <JFXButton buttonType="RAISED" onAction="#showServiceDetails" layoutX="325.0"
+                                               layoutY="37.0"
+                                               styleClass="btn-raised" text="Show"/>
+                                </children>
+                            </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="355.0">
+                                <children>
+                                    <Text layoutX="19.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                                          text="Warranty Details">
+                                        <font>
+                                            <Font size="36.0"/>
+                                        </font>
+                                    </Text>
+                                    <JFXButton buttonType="RAISED" onAction="#showWarrantyDetails" layoutX="331.0"
+                                               layoutY="37.0"
+                                               styleClass="btn-raised" text="Show"/>
+                                </children>
+                            </AnchorPane>
+                        </items>
+      </SplitPane>
+    </children>
+</VBox>

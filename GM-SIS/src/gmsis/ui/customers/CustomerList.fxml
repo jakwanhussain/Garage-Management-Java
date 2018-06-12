@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of GM-SIS by #Team10
+  ~  No licence because QM owns our souls anyway
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.net.URL?>
+<VBox fx:id="customerListRoot" alignment="CENTER" styleClass="fullscreen" xmlns="http://javafx.com/javafx/8.0.112"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.customers.CustomerListController">
+    <stylesheets>
+        <URL value="@customers.css"/>
+        <URL value="@../main.css"/>
+    </stylesheets>
+
+    <properties>
+        <controller>
+            <fx:reference source="controller"/>
+        </controller>
+    </properties>
+
+    <children>
+        <HBox spacing="8.0" styleClass="btn-group">
+            <children>
+                <JFXButton buttonType="RAISED" onAction="#addCustomer" styleClass="btn-raised" text="Add"/>
+                <JFXButton onAction="#editSelectedCustomer" text="Edit">
+                    <styleClass>
+                        <String fx:value="requires-selection"/>
+                        <String fx:value="btn"/>
+                    </styleClass>
+                </JFXButton>
+                <JFXButton styleClass="requires-selection" text="Vehicles">
+                    <styleClass>
+                        <String fx:value="requires-selection"/>
+                        <String fx:value="btn"/>
+                    </styleClass>
+                </JFXButton>
+                <JFXButton onAction="#addBookingToCustomer" text="New Booking">
+                    <styleClass>
+                        <String fx:value="requires-selection"/>
+                        <String fx:value="btn"/>
+                    </styleClass>
+                </JFXButton>
+                <JFXButton onAction="#deleteSelectedCustomer" text="Delete">
+                    <styleClass>
+                        <String fx:value="btn-danger"/>
+                        <String fx:value="requires-selection"/>
+                    </styleClass>
+                </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+            </padding>
+        </HBox>
+        <JFXListView fx:id="list" onMouseClicked="#customerListClick" VBox.vgrow="ALWAYS"/>
+        <HBox>
+            <children>
+                <JFXComboBox fx:id="searchType" promptText="Search mode..."/>
+                <JFXTextField fx:id="searchInput" onKeyReleased="#onSearchInput" promptText="Search text..."
+                              HBox.hgrow="SOMETIMES">
+                    <HBox.margin>
+                        <Insets top="2.0"/>
+                    </HBox.margin>
+                </JFXTextField>
+                <JFXButton contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#clearSearch"
+                           styleClass="btn-danger">
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@close-circle.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0"/>
+            </padding>
+        </HBox>
+    </children>
+</VBox>

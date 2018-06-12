@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" fx:id="spcFormRoot" prefHeight="450.0" prefWidth="647.0" style="-fx-background-color: #91ede3;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.specialistRepairs.SPCFormController">
+   <children>
+      <SplitPane layoutX="-5.0" layoutY="1.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="506.0" prefWidth="645.0" style="-fx-background-color: #e4e4e4;">
+               <children>
+                  <Label layoutX="251.0" layoutY="1.0" text="SPC Form">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="25.0" layoutY="39.0" prefHeight="200.0" prefWidth="593.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="10.0" text="SPC Name:" />
+                        <JFXTextField fx:id="spcName" focusColor="#827030" layoutX="129.0" layoutY="4.0" maxWidth="285.0" minWidth="74.0" prefHeight="31.0" prefWidth="285.0" />
+                        <Label layoutX="9.0" layoutY="50.0" text="SPC Address:" />
+                        <JFXTextField fx:id="spcAddress" focusColor="#827030" layoutX="129.0" layoutY="45.0" maxWidth="285.0" minWidth="74.0" prefHeight="31.0" prefWidth="285.0" />
+                        <Label layoutX="9.0" layoutY="87.0" text="SPC Phone Number:" />
+                        <JFXTextField fx:id="spcPhone" focusColor="#827030" layoutX="129.0" layoutY="80.0" maxWidth="285.0" minWidth="74.0" prefHeight="31.0" prefWidth="285.0" />
+                        <Label layoutX="9.0" layoutY="126.0" text="SPC Email:" />
+                        <JFXTextField fx:id="spcEmail" focusColor="#827030" layoutX="129.0" layoutY="120.0" maxWidth="285.0" minWidth="74.0" prefHeight="31.0" prefWidth="285.0" />
+                     </children>
+                  </Pane>
+                  <JFXButton layoutX="562.0" layoutY="398.0" onAction="#saveSPC" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: #4059a9;" text="Save" textFill="WHITE" />
+                  <JFXButton layoutX="481.0" layoutY="397.0" onAction="#cancelSPC" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: #4059a9;" text="Cancel" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

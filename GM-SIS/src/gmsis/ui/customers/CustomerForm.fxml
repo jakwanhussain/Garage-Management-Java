@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of GM-SIS by #Team10
+  ~  No licence because QM owns our souls anyway
+  -->
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<HBox fx:id="customerFormRoot" alignment="CENTER" stylesheets="@customers.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.customers.CustomerFormController">
+    <children>
+        <VBox styleClass="container" HBox.hgrow="SOMETIMES">
+            <children>
+                <VBox>
+                    <children>
+                        <Label text="Full Name">
+                            <VBox.margin>
+                                <Insets left="8.0" />
+                            </VBox.margin>
+                        </Label>
+                        <JFXTextField fx:id="name" promptText="Schlock H. Olmes" />
+                    </children>
+                </VBox>
+                <GridPane vgap="24.0" VBox.vgrow="NEVER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Email Address">
+                                    <VBox.margin>
+                                        <Insets left="8.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXTextField fx:id="email" promptText="user@example.com" />
+                            </children>
+                        </VBox>
+                        <VBox GridPane.columnIndex="1">
+                            <children>
+                                <Label text="Phone Number">
+                                    <VBox.margin>
+                                        <Insets left="8.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXTextField fx:id="phone" promptText="+441112223344" />
+                            </children>
+                        </VBox>
+                        <VBox GridPane.rowIndex="1">
+                            <children>
+                                <Label text="Address">
+                                    <VBox.margin>
+                                        <Insets left="8.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXTextField fx:id="address" promptText="221B Faker Street" />
+                            </children>
+                        </VBox>
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Label text="Postcode">
+                                    <VBox.margin>
+                                        <Insets left="8.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXTextField fx:id="postcode" promptText="L01 7EK" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="8.0" GridPane.rowIndex="2">
+                            <children>
+                                <Label text="Customer Type">
+                                    <VBox.margin>
+                                        <Insets left="8.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXRadioButton selected="true" styleClass="type--individual" text="Individual">
+                                    <properties>
+                                        <value>INDIVIDUAL</value>
+                                    </properties>
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="customerType" />
+                                    </toggleGroup>
+                                </JFXRadioButton>
+                                <JFXRadioButton styleClass="type--business" text="Business" toggleGroup="$customerType">
+                                    <properties>
+                                        <value>BUSINESS</value>
+                                    </properties>
+                                </JFXRadioButton>
+                            </children>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                    </VBox.margin>
+                </GridPane>
+                <VBox alignment="BOTTOM_RIGHT" VBox.vgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="CENTER_RIGHT" spacing="24.0">
+                            <children>
+                                <JFXButton onAction="#cancelEdit" text="Cancel" />
+                                <JFXButton fx:id="saveButton" buttonType="RAISED" onAction="#commitEdit" styleClass="btn-primary" text="Save" />
+                            </children>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                    </VBox.margin>
+                </VBox>
+            </children>
+        </VBox> <!-- /.container -->
+    </children>
+</HBox>

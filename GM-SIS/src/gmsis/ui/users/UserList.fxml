@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~  This file is part of GM-SIS by #Team10
+  ~  No licence because QM owns our souls anyway
+  -->
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<VBox styleClass="fullscreen" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.users.UserListController">
+    <stylesheets>
+        <URL value="@users.css" />
+        <URL value="@../main.css" />
+    </stylesheets>
+    <children>
+        <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <items>
+                <JFXButton mnemonicParsing="false" text="Add" buttonType="RAISED" styleClass="btn-raised" onAction="#addRow" />
+                <JFXButton mnemonicParsing="false" text="Delete User" styleClass="btn-danger" onAction="#deleteUser"/>
+            </items>
+        </ToolBar>
+        <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="200.0" styleClass="fullscreen" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idCol" editable="false" prefWidth="100.0" text="User ID" />
+                <TableColumn fx:id="firstNameCol" prefWidth="200.0" text="First Name" />
+                <TableColumn fx:id="lastNameCol" prefWidth="200.0" text="Last Name" />
+                <TableColumn fx:id="isAdminCol" prefWidth="100" text="Is admin?" />
+                <TableColumn fx:id="passwordCol" prefWidth="200" text="Change password..." />
+                <TableColumn fx:id="mechanicCol" prefWidth="300" text="Mechanic rate"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="specialistRepairRoot" prefHeight="554.0" prefWidth="755.0" style="-fx-background-color: #91ede3;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.specialistRepairs.SpecialistRepairsController">
+    <stylesheets>
+        <URL value="@specialistrepairs.css" />
+    </stylesheets>
+   <children>
+      <SplitPane layoutX="-5.0" layoutY="1.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="659.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="506.0" prefWidth="645.0" style="-fx-background-color: #e4e4e4;">
+               <children>
+                  <Label layoutX="203.0" layoutY="12.0" text="Specialist Repair Booking">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="25.0" layoutY="50.0" prefHeight="293.0" prefWidth="264.0">
+                     <children>
+                        <Label layoutX="12.0" layoutY="21.0" text="Customer:" />
+                        <Label layoutX="9.0" layoutY="54.0" text="Vehicle or Part being Repaired?">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="138.0" text="Part Serial #:" />
+                        <Label layoutX="9.0" layoutY="237.0" text="Repair Centre:" />
+                        <Label layoutX="9.0" layoutY="187.0" text="Vehicle Reg:" />
+                        <ComboBox fx:id="selectCustomer" layoutX="101.0" layoutY="17.0" prefHeight="25.0" prefWidth="136.0" promptText="Select Customer" />
+                        <Pane layoutX="9.0" layoutY="85.0" prefHeight="32.0" prefWidth="251.0">
+                           <children>
+                              <RadioButton fx:id="vehicleButton" layoutY="6.0" mnemonicParsing="false" pickOnBounds="false" text="Vehicle">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="toRepair" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="partButton" layoutX="76.0" layoutY="6.0" mnemonicParsing="false" pickOnBounds="false" text="Part" toggleGroup="$toRepair" />
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="partText" focusColor="#827030" layoutX="100.0" layoutY="133.0" maxWidth="175.0" minWidth="74.0" prefHeight="31.0" prefWidth="175.0" />
+                        <ComboBox fx:id="customerVehicle" layoutX="106.0" layoutY="183.0" prefHeight="25.0" prefWidth="160.0" promptText="Select Vehicle" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="391.0" layoutY="39.0" prefHeight="293.0" prefWidth="307.0">
+                     <children>
+                        <JFXDatePicker fx:id="deliveryDate" defaultColor="#827030" editable="false" layoutX="102.0" layoutY="32.0" promptText="enter date" />
+                        <Label layoutX="24.0" layoutY="38.0" text="Delivery Date:" />
+                        <Label layoutX="24.0" layoutY="87.0" prefHeight="17.0" prefWidth="83.0" text="Return Date:" />
+                        <JFXDatePicker fx:id="returnDate" defaultColor="#827030" editable="false" layoutX="102.0" layoutY="81.0" promptText="enter date" />
+                        <Label layoutX="24.0" layoutY="244.0" text="Cost:" />
+                        <Label layoutX="24.0" layoutY="149.0" text="Add to Booking:" />
+                        <ComboBox fx:id="selectBooking" layoutX="142.0" layoutY="147.0" prefHeight="25.0" prefWidth="136.0" promptText="Select Booking" />
+                     </children>
+                  </Pane>
+                  <JFXButton layoutX="672.0" layoutY="501.0" onAction="#makeBooking" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: #4059a9;" text="Book" textFill="WHITE" />
+                  <JFXButton layoutX="591.0" layoutY="500.0" onAction="#cancelBooking" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: #4059a9;" text="Cancel" textFill="WHITE" />
+                  <ComboBox fx:id="selectSPCDrop" layoutX="128.0" layoutY="284.0" prefHeight="25.0" prefWidth="136.0" promptText="Select SPC" />
+                  <JFXTextField fx:id="costText" focusColor="#827030" layoutX="460.0" layoutY="277.0" maxWidth="175.0" minWidth="69.0" prefHeight="31.0" prefWidth="69.0" />
+                  <Separator layoutX="358.0" layoutY="69.0" orientation="VERTICAL" prefHeight="200.0" />
+                  <Label layoutX="13.0" layoutY="505.0" text="Note: Vehicle Reg must be filled out, in this case of a part being repaired,&#10;it is the vehicle the part belongs to " />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

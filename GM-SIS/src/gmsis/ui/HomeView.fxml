@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox styleClass="fullscreen" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.ui.HomeController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" minWidth="360" prefHeight="40.0" spacing="10.0" styleClass="login-toolbar">
+          <Label fx:id="userString" text="Logged in as A User" />
+          <JFXButton alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#logOut" text="Log Out">
+            <styleClass>
+               <String fx:value="btn" />
+               <String fx:value="btn-danger" />
+            </styleClass></JFXButton>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <JFXTabPane fx:id="homeTabs" VBox.vgrow="ALWAYS">
+          <styleClass>
+              <String fx:value="fullscreen"/>
+              <String fx:value="tabs"/>
+          </styleClass>
+          <properties>
+              <controller>
+                  <fx:reference source="controller"/>
+              </controller>
+          </properties>
+          <tabs>
+              <Tab text="Customers">
+                  <content>
+                      <StackPane id="customersPane" />
+                  </content>
+              </Tab>
+              <Tab text="Booking Manager">
+                  <content>
+                      <StackPane id="bookingListPane" />
+                  </content>
+              </Tab>
+              <Tab text="Specialist Repair Booking">
+                  <content>
+                      <StackPane id="specialistRepairsPane" />
+                  </content>
+              </Tab>
+              <Tab text="Parts">
+                  <content>
+                      <StackPane id="partsPane" />
+                  </content>
+              </Tab>
+              <Tab text="Vehicles">
+                  <content>
+                      <StackPane id="vehiclesPane" />
+                  </content>
+              </Tab>
+              <Tab fx:id="usersTab" text="Users">
+                  <content>
+                      <StackPane id="usersPane" />
+                  </content>
+              </Tab>
+          </tabs>
+      </JFXTabPane>
+   </children>
+</VBox>

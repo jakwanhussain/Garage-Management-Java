@@ -1,0 +1,9 @@
+/*
+ *  This file is part of GM-SIS by #Team10
+ *  No licence because QM owns our souls anyway
+ */
+
+.fullscreen {
+    -fx-pref-width: 100%;
+    -fx-pref-height: 100%;
+}

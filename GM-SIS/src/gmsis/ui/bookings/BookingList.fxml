@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="bookingListRoot" prefHeight="560.0" prefWidth="882.0" stylesheets="@../main.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gmsis.controllers.bookings.BookingListController">
+   <children>
+      <Label layoutX="357.0" layoutY="7.0" text="Booking List">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.9142857142857143" endY="0.9746031746031747" startY="0.8984126499720982">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="BLACK" offset="0.007662835249042145" />
+                  <Stop color="#1873a3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TableView fx:id="bookingTable" layoutX="13.0" layoutY="108.0" prefHeight="364.0" prefWidth="859.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="30.666656494140625" text="ID" />
+          <TableColumn fx:id="nameCol" prefWidth="141.33334350585938" text="Name" />
+            <TableColumn fx:id="regCol" text="Registration" />
+            <TableColumn fx:id="mileageCol" prefWidth="71.0" text="Mileage" />
+            <TableColumn fx:id="dateCol" prefWidth="80.33331298828125" text="Date " />
+            <TableColumn fx:id="timeCol" minWidth="0.0" prefWidth="42.0" text="Time" />
+            <TableColumn fx:id="typeCol" minWidth="0.0" prefWidth="116.33331298828125" text="Type" />
+            <TableColumn fx:id="mechanicCol" minWidth="0.0" prefWidth="77.66668701171875" text="Mechanic ID" />
+            <TableColumn fx:id="costCol" maxWidth="115.6666259765625" minWidth="0.0" prefWidth="115.6666259765625" text="Mechanic Cost" />
+            <TableColumn fx:id="statusCol" maxWidth="122.0" minWidth="0.0" prefWidth="112.0" text="Completed" />
+            <TableColumn fx:id="billCol" maxWidth="150.0" prefWidth="83.0" resizable="false" text="Create Bill" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="edit" buttonType="RAISED" layoutX="543.0" layoutY="518.0" onAction="#makeEdit" prefHeight="28.0" prefWidth="80.0" styleClass="btn-raised" text="Edit" />
+      <JFXButton fx:id="delete" buttonType="RAISED" layoutX="656.0" layoutY="518.0" onAction="#makeDelete" prefHeight="28.0" prefWidth="80.0" styleClass="btn-raised" text="Delete" />
+      <JFXButton fx:id="newBooking" buttonType="RAISED" layoutX="27.0" layoutY="479.0" onAction="#newBookings" prefHeight="28.0" prefWidth="108.0" styleClass="btn-raised" text="New Booking" />
+      <Pane layoutX="167.0" layoutY="45.0" prefHeight="47.0" prefWidth="606.0">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="352.0" layoutY="11.0" onAction="#searchBooking" prefHeight="25.0" prefWidth="102.0" styleClass="btn-raised" text="Search Booking" />
+            <TextField fx:id="searchBookingsText" layoutX="190.0" layoutY="11.0" prefHeight="25.0" prefWidth="153.0" promptText="search" />
+            <Label layoutX="3.0" layoutY="15.0" prefHeight="19.0" prefWidth="63.0" text="Search By">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="searchBy" layoutX="72.0" layoutY="11.0" prefHeight="25.0" prefWidth="112.0" promptText="Select" />
+            <JFXButton buttonType="RAISED" layoutX="463.0" layoutY="11.0" onAction="#clearSearch" prefHeight="25.0" prefWidth="102.0" styleClass="btn-raised" text="Clear Search" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="details" buttonType="RAISED" layoutX="543.0" layoutY="479.0" onAction="#showDetails" prefHeight="28.0" prefWidth="192.0" styleClass="btn-raised" text="Show Details" />
+      <ImageView fitHeight="47.0" fitWidth="45.0" layoutX="783.0" layoutY="8.0" onMouseClicked="#getHelp">
+         <image>
+            <Image url="@../interrogacao.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="151.0" layoutY="479.0" onAction="#setComplete" prefHeight="28.0" prefWidth="121.0" styleClass="btn-raised" text="Complete Booking" />
+   </children>
+</AnchorPane>
